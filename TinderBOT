@@ -1,7 +1,7 @@
 from selenium import webdriver
 from time import sleep
 
-from LoginInfo import username, password
+from LoginInfo import username, password #seperate file for login information
 
 class TinderBot():
     def __init__(self):
