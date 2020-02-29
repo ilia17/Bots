@@ -23,7 +23,7 @@ class TwitterBot():
         x = 1    
         
         #loop for hitting that follow button
-        while count <10:                          
+        while count <10:          #number of follows we would like to get recommended not more than 50                 
             self.driver.find_element_by_xpath(f"""//*[@id="react-root"]/div/div/div/main/div/div/div/div[1]/div/div[2]/div[{x}]/div/div[2]/div[1]/div[2]/div/div/span/span""").click()
             x+=1                                                                   
             count+=1
