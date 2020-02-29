@@ -1,0 +1,29 @@
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from time import sleep 
+
+class TwitterBot():
+    def __init__(self):
+        self.driver = webdriver.Chrome()
+        
+    def login(self):
+        email = 'email or username or phone number'
+        paswd = 'your passcode'
+        self.driver.get('https://twitter.com/i/related_users/1119725209613766657')
+        
+        #logging in
+        sleep(5)
+        self.driver.find_element_by_xpath('//*[@id="react-root"]/div/div/div[1]/main/div/div/form/div/div[1]/label/div/div[2]/div/input').send_keys(email)
+        self.driver.find_element_by_xpath('//*[@id="react-root"]/div/div/div[1]/main/div/div/form/div/div[2]/label/div/div[2]/div/input').send_keys(paswd)
+        self.driver.find_element_by_xpath('//*[@id="react-root"]/div/div/div[1]/main/div/div/form/div/div[3]/div/div').click()
+        sleep(5)
+        
+    def follow(self):
+        count=0
+        x = 1    
+        
+        #loop for hitting that follow button
+        while count <10:                          
+            self.driver.find_element_by_xpath(f"""//*[@id="react-root"]/div/div/div/main/div/div/div/div[1]/div/div[2]/div[{x}]/div/div[2]/div[1]/div[2]/div/div/span/span""").click()
+            x+=1                                                                   
+            count+=1
